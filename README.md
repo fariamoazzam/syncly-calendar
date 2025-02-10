@@ -1,8 +1,17 @@
 # 🚧 Syncly Calendar — Work in Progress 🚧  
 
 ### 📋 Project Description  
-This project is currently under development and not fully functional yet. It's a work in progress, and I plan to improve it over time by addressing key issues and adding features.  
+This project leverages the Google Calendar API to seamlessly synchronize calendars between two or more users, enabling better scheduling and event management. The goal is to create a collaborative tool for managing shared events without manual intervention. Currently under development, the project will undergo improvements to enhance functionality, user experience, and security.
 
+---
+
+## Bug Fixes & Improvements
+1. **TemplateNotFound Error Resolved:**  
+   Fixed an issue where Flask couldn't locate `dashboard.html`. Ensured the correct template directory structure was recognized.
+   
+2. **Insecure Transport Exception Workaround:**  
+   Temporarily bypassed Google OAuth's insecure transport error by running Flask with a development server. This will be secured in future updates with HTTPS.
+   
 ---
 
 ### 🚀 Current Status  
@@ -31,10 +40,10 @@ This project is currently under development and not fully functional yet. It's a
 ### 📚 Installation  
 ```bash
 # Clone this repository
-git clone <repository-url>
+git clone https://github.com/fariamoazzam/syncly-calendar.git
 
 # Navigate into the directory
-cd project-folder
+cd calendar_ai
 
 # Create a virtual environment
 python -m venv env
