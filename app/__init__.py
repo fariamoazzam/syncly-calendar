@@ -13,7 +13,8 @@ def create_app():
     """
     Create and configure the Flask application.
     """
-    app = Flask(__name__)
+    app = Flask(__name__, template_folder='template')
+
     app.config.from_object(DevelopmentConfig)
 
     # Initialize the database

@@ -6,6 +6,8 @@ import os
 from google.oauth2.credentials import Credentials
 from google.auth.transport.requests import Request
 
+os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1'
+
 auth_bp = Blueprint('auth', __name__)
 
 BASE_DIR = os.path.abspath(os.path.dirname(__file__))
@@ -16,7 +18,9 @@ SCOPES = ['https://www.googleapis.com/auth/calendar']
 flow = Flow.from_client_secrets_file(
     CLIENT_SECRETS_FILE,
     scopes=SCOPES,
-    redirect_uri='http://localhost:5000/auth/callback'
+    # redirect_uri='http://localhost:5000/auth/callback'
+    # redirect_uri='http://127.0.0.1:5000/oauth/callback'
+    redirect_uri='http://127.0.0.1:5000/auth/callback'
 )
 
 def refresh_credentials_if_expired(credentials_data):
